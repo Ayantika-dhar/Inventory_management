@@ -76,7 +76,27 @@ inventory-management-backend/
 └── README.md
 ```
 
+## Docker Support
+
+This backend is also Dockerized to simplify deployment.
+
+-  A `Dockerfile` is present in the **root** of the repository to containerize the FastAPI application.
+-  The container starts the app on an **insecure HTTP port** using the `PORT` environment variable.
+
+### Build Docker Image
+
+```bash
+docker build -t fastapi-backend .
+```
+
+### Run the Container
+
+```bash
+docker run -d -p 8000:8000 -e PORT=8000 fastapi-backend
+```
+
+Visit the app at: `http://localhost:8000`
+
 ## License
 
 This project is intended for backend development practice and internal use only.
- 
